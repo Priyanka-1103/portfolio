@@ -1,0 +1,142 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+    text-shadow: 0 9px #fbcedb;
+}
+
+
+/* Navigation Bar */
+.logo {
+    height: 2.5vw;
+    width: 2.5vw;
+    transition: cubic-bezier(0.20, 0, 0.175, 1) 1s;
+}
+
+.resume {
+    display: inline-block;
+    position: relative;
+}
+
+.resume:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #030303;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.resume:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        display: none;
+    }
+
+    .call {
+        display: none;
+    }
+}
+
+
+.background-image {
+    height: 90%;
+    background-image: url('./assets/bg.svg');
+    border: 2px solid #fa8787;
+    background-color: #fbcedb;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+    .background-image {
+        background-color: #fbcedb;
+        background-image: none;
+    }
+}
+
+
+
+
+/* Skills */
+
+.skills:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.bar {
+    position: relative;
+    border: 2px solid #fa8787;
+    border-radius: 20px;
+}
+
+.bar div {
+    position: relative;
+    width: 0;
+    height: 9px;
+    border-radius: 10px;
+    background-color: #fa8787;
+}
+
+#html-bar {
+    animation: html-fill 2s forwards;
+}
+
+@keyframes html-fill {
+    100% {
+        width: 90%;
+    }
+}
+
+#css-bar {
+    animation: css-fill 2s forwards;
+}
+
+@keyframes css-fill {
+    100% {
+        width: 75%;
+    }
+}
+
+#js-bar {
+    animation: js-fill 2s forwards;
+}
+
+@keyframes js-fill {
+    100% {
+        width: 72%;
+    }
+}
+
+#cpp-bar {
+    animation: cpp-fill 2s forwards;
+}
+
+@keyframes cpp-fill {
+    100% {
+        width: 58%;
+    }
+}
